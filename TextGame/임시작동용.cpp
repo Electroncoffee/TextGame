@@ -159,7 +159,7 @@ error:
 
 	}
 }
-int(void)//비전투시 무슨행동을 취할지의 함수
+int action (void)//비전투시 무슨행동을 취할지의 함수
 {
 	char i = 0;// 사용용도가 명확하기에 char을 사용
 	char key = 0;

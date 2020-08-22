@@ -33,9 +33,6 @@
     <ClCompile Include="textgame.c">
       <Filter>소스 파일\ver0.1</Filter>
     </ClCompile>
-    <ClCompile Include="임시작동용.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="c++에서의 난수.cpp">
       <Filter>소스 파일\필요한 기능 집합소</Filter>
     </ClCompile>
