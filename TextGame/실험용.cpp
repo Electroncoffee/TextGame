@@ -38,13 +38,13 @@ void GameStart(void);
 char Item_Name[6][20] = { "목제검","철제검","제사장의검","용검","체력포션","힘포션" };
 char Monster_Name[6][20] = { "박쥐","늑대","신도","용기사","제사장","용" };
 int Item_Status[6] = { 5,10,18,20,5,5 };
-char Monster_Status[6][3] = { {4,1,5},{7,2,10},{10,4,15},{12,5,25},{20,10,40},{30,15,60} }; //hp,pow,exp
-//int exp[10] = {10,30,60,90,130,180,240,310,390,490};
+char Monster_Status[6][3] = { {6,2,5},{12,3,10},{15,5,15},{25,15,25},{20,10,40},{40,20,60} }; //hp,pow,exp
+int Level_Up_Exp[10] = {10,30,60,90,130,180,240,310,390,490};
 
 class Battle_Monster
 {
 private:
-	int hp, pow;
+	int hp, pow, drop_exp;
 	int Monster_code;
 public:
 	/*
@@ -60,9 +60,11 @@ public:
 	{
 		hp = Monster_Status[code][0];
 		pow = Monster_Status[code][1];
+		drop_exp = Monster_Status[code][2];
 		Monster_code = code;
 	}
 	int Check_HP(void) { return hp; }
+	int Check_Exp(void) { return drop_exp; }
 	int Check_Mcode(void) const { return Monster_code; }
 	int Attack(void) {
 		std::cout << Monster_Name[Monster_code] << "의 공격!" <<std::endl;
@@ -82,7 +84,7 @@ public:
 class Bag //배낭
 {
 private:
-	int own[6] = { 1,1,1,1,1,1 };
+	int own[6] = { 0,0,0,0,0,0 };
 public:
 	void Root(int icode) { own[icode]++; } //아이템 루팅
 	int ShowBag(void) //가방 보여주기
@@ -130,6 +132,17 @@ private:
 public:
 	int Check_HP(void) { return hp; }
 	int Check_level(void) { return level; }
+	void Add_Exp(int drop_exp) {
+		exp += drop_exp;
+		if (exp >= Level_Up_Exp[level - 1])
+		{
+			exp -= Level_Up_Exp[level - 1];
+			level++;
+			pow += 2;
+			max_hp += 2;
+			std::cout << "레벨이 상승했다!" << std::endl;
+		}
+	}
 	int Attack(void) {
 		std::cout << "당신의 공격!" << std::endl;
 		return pow;
@@ -218,6 +231,7 @@ int Item_Drop(int code)
 	case 5: {
 		flag = 3;
 		std::cout << "용을 처치하고 ";
+		break;
 	}
 	case 6: {
 		std::uniform_int_distribution<int> dis5(0, 3);
@@ -246,6 +260,8 @@ int Battle(Battle_Monster &Monster, character &Hero)
 		if (Monster.Damage(Hero.Attack())){
 			flag = 1;
 			std::cout << "전투에 승리했다." << std::endl;
+			std::cout << "경험치를 " << Monster.Check_Exp() << "획득했다!" << std::endl;
+			Hero.Add_Exp(Monster.Check_Exp());
 			break;
 		}
 		if (Hero.Damage(Monster.Attack())){
@@ -336,7 +352,7 @@ void GameStart(void)
 			i = false;
 		if (key == KEY::Right)
 			i = true;
-		Initkey();
+		key = 0;
 	}
 	if (i == true)
 		Tutorial();
@@ -391,7 +407,7 @@ void StandMenu(character &Hero) //행동선택 창
 				if (i < 3)
 					i++;
 			}
-			Initkey();
+			key = 0;
 		}
 		switch (i)
 		{

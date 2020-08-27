@@ -39,10 +39,48 @@
     <ClCompile Include="방향키 작동.cpp">
       <Filter>소스 파일\필요한 기능 집합소</Filter>
     </ClCompile>
+    <ClCompile Include="TextHeader.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
+    <ClCompile Include="Etc.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
+    <ClCompile Include="hero.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
+    <ClCompile Include="monster.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
+    <ClCompile Include="Battle.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
+    <ClCompile Include="Bag.cpp">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="각종 정리.txt">
       <Filter>소스 파일</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TextHeader.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
+    <ClInclude Include="Etc.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
+    <ClInclude Include="hero.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
+    <ClInclude Include="monster.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
+    <ClInclude Include="Bag.h">
+      <Filter>소스 파일\ver0.2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
