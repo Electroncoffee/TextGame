@@ -3,8 +3,7 @@
 #include <conio.h>
 #include "Bag.h"
 
-enum Item
-{
+enum Item {//열거형 상수로 아이템 넘버 정렬
 	Etype_WoodSword, //0
 	Etype_IronSword,
 	Etype_PriestSword,
@@ -12,11 +11,8 @@ enum Item
 	Ctype_HPpotion,
 	Ctype_ATKpotion
 };
-
-void Bag::Root(int icode) { own[icode]++; } //아이템 루팅
-	
-int Bag::ShowBag(void) //가방 보여주기
-{
+void Bag::Root(int icode) { own[icode]++; } //아이템 획득
+int Bag::ShowBag(void) {//가방 보여주기
 	system("cls");
 	std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
 	if (own[Item::Etype_WoodSword] != 0)
@@ -30,18 +26,19 @@ int Bag::ShowBag(void) //가방 보여주기
 	std::cout << "4.체력포션: " << own[Item::Ctype_HPpotion] << "개" << std::endl;
 	std::cout << "5.힘포션: " << own[Item::Ctype_ATKpotion] << "개" << std::endl << std::endl << std::endl;
 	std::cout << "장비 장착은 숫자를, 뒤로가려면 엔터키를 누르시오";
-	while (1)
-	{
+	while (1) {//명령어 입력까지 무한반복
 		key = _getch();
-		if (key == 13)
+		if (key == 13) //엔터 입력
 			return -1;
-		if (48 <= key && key <= 53)
-		{
-			key -= 48;
-			if (own[key] > 0)
-				own[key]--;
+		if (48 <= key && key <= 53) {//0~5 입력
+			key -= 48;//int형의 비애
+			if (own[key] > 0) {//장비가 있다면
+				own[key]--; //가방에서 1개제거
+			}
+			else {//장비가 없다면
+				key = -2;//-2를 반환
+			}
 			return key;
 		}
-
 	}
 }

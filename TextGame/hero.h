@@ -6,7 +6,7 @@
 class character //ÁÖÀÎ°ø
 {
 private:
-	int Item_Status[6] = { 5,10,18,20,5,5 };
+	int Item_Status[6] = { 5,10,18,20,3,1 };
 	int Level_Up_Exp[10] = { 10,30,60,90,130,180,240,310,390,490 };
 	int key = 0;
 	int level = 1;

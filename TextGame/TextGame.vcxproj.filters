@@ -16,28 +16,10 @@
     <Filter Include="소스 파일\ver0.2">
       <UniqueIdentifier>{340abe39-a83f-4d10-aad4-fd27370aab3d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\ver0.1">
-      <UniqueIdentifier>{df9fa5d2-5b39-420d-b94d-5009c631f303}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\필요한 기능 집합소">
-      <UniqueIdentifier>{4c0e18e9-58f6-4c12-8333-3db36fd86100}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일\ver0.2</Filter>
-    </ClCompile>
-    <ClCompile Include="실험용.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="textgame.c">
-      <Filter>소스 파일\ver0.1</Filter>
-    </ClCompile>
-    <ClCompile Include="c++에서의 난수.cpp">
-      <Filter>소스 파일\필요한 기능 집합소</Filter>
-    </ClCompile>
-    <ClCompile Include="방향키 작동.cpp">
-      <Filter>소스 파일\필요한 기능 집합소</Filter>
     </ClCompile>
     <ClCompile Include="TextHeader.cpp">
       <Filter>소스 파일\ver0.2</Filter>
