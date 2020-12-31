@@ -3,15 +3,15 @@
 #include "TextHeader.h"
 #include "hero.h"
 #include "Battle.h"
-
+using namespace std;
 AllAction allaction;
 
 void Tutorial(void)
 {
 	system("cls");
-	std::cout << "튜토리얼 들어갈 곳" << std::endl;
+	cout << "튜토리얼 들어갈 곳" << endl;
 	int key;
-	std::cout << "넘어가려면 엔터키를 누르시오";
+	cout << "넘어가려면 엔터키를 누르시오";
 	do
 	{
 		key = _getch();
@@ -25,23 +25,23 @@ void GameStart(void)
 	while (1)
 	{
 		system("cls");
-		std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-		std::cout << "                                                    ";
-		std::cout << "Text Game";
-		std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-		std::cout << "                         ";
-		std::cout << "게임시작";
-		std::cout << "                                         ";
-		std::cout << "게임방법" << std::endl;
+		cout << "\n\n\n\n\n\n\n\n\n\n";
+		cout << "                                                    ";
+		cout << "Text Game";
+		cout << "\n\n\n\n\n\n\n\n";
+		cout << "                         ";
+		cout << "게임시작";
+		cout << "                                         ";
+		cout << "게임방법" << endl;
 		if (i == 0)
 		{
-			std::cout << "                         ";
-			std::cout << "--------";
+			cout << "                         ";
+			cout << "--------";
 		}
 		if (i == 1)
 		{
-			std::cout << "                                                                          ";
-			std::cout << "--------";
+			cout << "                                                                          ";
+			cout << "--------";
 		}
 		key = _getch();
 		if (key == 13)
@@ -54,7 +54,7 @@ void GameStart(void)
 		if (key == 77)
 			i = true;
 		key = 0;
-		
+
 	}
 	if (i == true)
 		Tutorial();
@@ -70,29 +70,29 @@ void StandMenu(void)//행동선택 창
 		while (1)
 		{
 			system("cls");
-			std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-			std::cout << "                                                       ";
-			std::cout << "행동 선택";
-			std::cout << std::endl << std::endl << std::endl << std::endl;
-			std::cout << "                 ";
-			std::cout << "(1)장비사용              (2)캐릭터상태              (3)휴식              (4)탐색" << std::endl;
+			cout << "\n\n\n\n\n\n\n\n\n\n";
+			cout << "                                                       ";
+			cout << "행동 선택";
+			cout << "\n\n\n\n";
+			cout << "                 ";
+			cout << "(1)장비사용              (2)캐릭터상태              (3)휴식              (4)탐색" << endl;
 			switch (i)
 			{
 			case 0:
-				std::cout << "                 ";
-				std::cout << "-----------";
+				cout << "                 ";
+				cout << "-----------";
 				break;
 			case 1:
-				std::cout << "                                          ";
-				std::cout << "-------------";
+				cout << "                                          ";
+				cout << "-------------";
 				break;
 			case 2:
-				std::cout << "                                                                     ";
-				std::cout << "-------";
+				cout << "                                                                     ";
+				cout << "-------";
 				break;
 			case 3:
-				std::cout << "                                                                                          ";
-				std::cout << "-------";
+				cout << "                                                                                          ";
+				cout << "-------";
 				break;
 			}
 			key = _getch();
@@ -120,7 +120,7 @@ void StandMenu(void)//행동선택 창
 			break;
 		case 1:
 			Hero.ShowChar();
-			std::cout << "넘어가려면 엔터키를 누르시오";
+			cout << "넘어가려면 엔터키를 누르시오";
 			do
 			{
 				key = _getch();

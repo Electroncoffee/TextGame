@@ -2,6 +2,7 @@
 #ifndef __HERO_H__
 #define __HERO_H__
 #include "Bag.h"
+using namespace std;
 
 class character //주인공
 {
@@ -26,14 +27,14 @@ public:
 	void ShowChar(void) const //const 함수라 헤더에서 선언,정의
 	{
 		system("cls");
-		std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
-		std::cout << "레벨: " << level << std::endl;
-		std::cout << "경험치: " << exp << std::endl;
-		std::cout << "최대체력: " << max_hp << std::endl;
-		std::cout << "현재체력: " << hp << std::endl;
-		std::cout << "장비: " << Item_Name[weapon] << std::endl;
-		std::cout << "공격력: " << pow << std::endl << std::endl << std::endl;
-		std::cout << "넘어가려면 엔터키를 누르시오";
+		cout << "\n\n\n\n\n\n\n\n\n\n";
+		cout << "레벨: " << level << endl;
+		cout << "경험치: " << exp << endl;
+		cout << "최대체력: " << max_hp << endl;
+		cout << "현재체력: " << hp << endl;
+		cout << "장비: " << Item_Name[weapon] << endl;
+		cout << "공격력: " << pow << "\n\n" << endl;
+		cout << "넘어가려면 엔터키를 누르시오";
 	}
 	void Rest(void);
 	void Root(int icode);//아이템 루팅

@@ -4,14 +4,14 @@
 #include <Windows.h>
 #include <random>
 #include "TextHeader.h"
-
+using namespace std;
 
 int main(void)
 {
 	GameStart();
 	StandMenu();
-	std::cout << "                   ";
-	std::cout << "You Died" << std::endl;
-	std::cout << "종료하려면 아무 키나 누르시오.";
+	cout << "                   ";
+	cout << "You Died" << endl;
+	cout << "종료하려면 아무 키나 누르시오.";
 	_getch();
 }

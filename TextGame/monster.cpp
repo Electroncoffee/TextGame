@@ -1,6 +1,7 @@
 #include <iostream>
 #include <Windows.h>
 #include "monster.h"
+using namespace std;
 
 enum Monster
 {
@@ -28,13 +29,13 @@ int Battle_Monster::Check_Exp(void) { return drop_exp; }
 int Battle_Monster::Check_Mcode(void) const { return Monster_code; }
 //공격
 int Battle_Monster::Attack(void) {
-	std::cout << Monster_Name[Monster_code] << "의 공격!" << std::endl;
+	cout << Monster_Name[Monster_code] << "의 공격!" << endl;
 	return pow;
 }
 //으앍함수
 int Battle_Monster::Damage(int damage)
 {
-	std::cout << Monster_Name[Monster_code] << "은(는)" << damage << "의 피해를 입었다!" << std::endl;
+	cout << Monster_Name[Monster_code] << "은(는)" << damage << "의 피해를 입었다!" << endl;
 	hp -= damage;
 	if (hp > 0)
 		return 0;
