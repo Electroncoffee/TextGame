@@ -76,8 +76,7 @@ void StandMenu(void)//행동선택 창
 			cout << "\n\n\n\n";
 			cout << "                 ";
 			cout << "(1)장비사용              (2)캐릭터상태              (3)휴식              (4)탐색" << endl;
-			switch (i)
-			{
+			switch (i) {
 			case 0:
 				cout << "                 ";
 				cout << "-----------";
@@ -101,28 +100,24 @@ void StandMenu(void)//행동선택 창
 			if (key != 224)
 				continue;
 			key = _getch();
-			if (key == 75)
-			{
+			if (key == 75) {
 				if (i > 0)
 					i--;
 			}
-			if (key == 77)
-			{
+			if (key == 77) {
 				if (i < 3)
 					i++;
 			}
 			key = 0;
 		}
-		switch (i)
-		{
+		switch (i) {
 		case 0:
 			Hero.UseItem();
 			break;
 		case 1:
 			Hero.ShowChar();
 			cout << "넘어가려면 엔터키를 누르시오";
-			do
-			{
+			do {
 				key = _getch();
 			} while (key != 13);
 			break;
