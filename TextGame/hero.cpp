@@ -49,6 +49,7 @@ void character::UseItem(void) {//아이템 사용
 	switch (Item) {
 	case -2://아이템 갯수 부족
 		cout << "아이템이 없습니다." << endl;
+		Sleep(1000);
 		break;
 	case -1://이전창으로 돌아가기
 		return;
@@ -60,12 +61,18 @@ void character::UseItem(void) {//아이템 사용
 		MyBag.Root(weapon);
 		weapon = Item;
 		pow += Item_Status[weapon];
+		cout << "장착되었습니다." << endl;
+		Sleep(1000);
 		break;
 	case 4://체력포션 사용
 		max_hp += Item_Status[Item];
+		cout << "최대체력이 증가합니다." << endl;
+		Sleep(1000);
 		break;
 	case 5://힘포션 사용
 		pow += Item_Status[Item];
+		cout << "공격력이 증가합니다." << endl;
+		Sleep(1000);
 		break;
 	}
 }

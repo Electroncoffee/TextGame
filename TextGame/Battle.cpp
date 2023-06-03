@@ -17,11 +17,13 @@ int AllAction::Battle(Battle_Monster &Monster, character &Hero)
 			Hero.Add_Exp(Monster.Check_Exp());
 			break;
 		}
+		Sleep(1000);
 		if (Hero.Damage(Monster.Attack())) {
 			flag = 0;
 			cout << "전투에 패배했다." << endl;
 			break;
 		}
+		Sleep(1000);
 	}
 	int key;
 	cout << "넘어가려면 엔터키를 누르시오";
